@@ -4,13 +4,12 @@ on:
     branches:
     - main
 
-env:
-  repository: EmilySeville7cfg/personal-automation-helpers
-
 jobs:
   check-yaml:
-    uses: ./.github/workflows/check-yaml.yaml
+    uses:
+      EmilySeville7cfg/personal-automation-helpers/.github/workflows/check-yaml.yaml@v1.0.0
   check-markdown:
-    uses: ${{ env.repository }}/github/workflows/check-markdown.yaml
+    uses:
+      EmilySeville7cfg/personal-automation-helpers/.github/workflows/check-markdown.yaml@v1.0.0
     with:
       config-name: base
