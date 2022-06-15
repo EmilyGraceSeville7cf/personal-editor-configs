@@ -7,9 +7,9 @@ on:
 jobs:
   check-yaml:
     uses:
-      EmilySeville7cfg/personal-automation-helpers/.github/workflows/check-yaml.yaml@v1.0.0
+      EmilySeville7cfg/personal-automation-helpers/.github/workflows/check-yaml.yaml@v1.1.0
   check-markdown:
     uses:
-      EmilySeville7cfg/personal-automation-helpers/.github/workflows/check-markdown.yaml@v1.0.0
+      EmilySeville7cfg/personal-automation-helpers/.github/workflows/check-markdown.yaml@v1.1.0
     with:
       config-name: base
