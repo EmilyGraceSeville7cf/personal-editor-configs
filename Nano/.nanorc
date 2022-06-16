@@ -1,0 +1,97 @@
+# Everything in curly braces is a placeholder.
+#
+# Hint
+# - undo/redo: M-{{u|r}}
+# - move one character left/down/up/right: ^{{b|n|p|f}}
+# - move one word left/right: M-{{b|f}}
+# - move to a line start/end: ^{{a|e}}
+# - move to a file start/end: M-{{<|>}}
+
+# ================
+# General settings
+# ================
+
+set tabsize 4
+set historylog
+set tabstospaces
+set keycolor white,magenta
+set statuscolor white,green
+set titlecolor white,magenta
+set linenumbers
+
+# save/exit
+bind ^q exit main # [q]uit
+bind ^w writeout main # [r]ead
+
+bind ^q exit help # [q]uit
+
+unbind ^x main
+unbind ^o main
+
+# undo/redo
+bind M-u undo main # [u]ndo
+bind M-r redo main # [r]edo
+
+# select/copy/cut/paste/delete
+bind M-m mark main # [m]ark
+bind M-y copy main # [y]ank
+bind M-c cut main # [c]ut
+bind M-p paste main # [p]ut
+
+unbind M-a main
+unbind M-6 main
+unbind F9 main
+unbind ^u main
+unbind F10 main
+
+# motions per one word
+bind M-f nextword main # [f]orward
+bind M-b prevword main # [b]ackward
+
+unbind M-Space main
+unbind ^Space main
+
+# motions to the start/end line
+bind M-< firstline main
+bind M-> lastline main
+
+bind M-b firstline help # [b]egin
+bind M-e lastline help # [e]nd
+
+unbind M-\ main
+unbind M-/ main
+
+unbind M-\ help
+unbind M-/ help
+
+# linter
+bind M-a linter main # [a]nalyzer
+
+# ===================
+# Syntax highlighting
+# ===================
+# tldr
+syntax tldr "\.md$"
+header "^# .*"
+
+linter tldr-lint
+
+color blue "^[[:space:]]*#.*$"
+color cyan "^[[:space:]]*>.*$"
+color brightred "^[[:space:]]*- .*:$"
+color brightgreen "^[[:space:]]*`.*`$"
+color brightcyan "\<\{\{[^ ]+\}\}\>"
+color bold,magenta "\{\{|\}\}"
+color bold,cyan "\<(path/to/file[[:digit:]]*|path/to/directory[[:digit:]]*|path/to/file_or_directory[[:digit:]]*)\>|\||\.\.\."
+
+# pascalabc.net
+syntax tldr "\.pas$"
+header "^uses .*"
+
+linter pabcnetcclear.exe
+
+color bold,green "\<(and|array|as|auto|begin|case|class|const|constructor|destructor|div|do|downto|else|end|event|except|extensionmethod|file|finalization|finally|for|foreach|function|goto|if|implementation|in|inherited|initialization|interface|is|label|lock|loop|mod|not|not|of|operator|or|procedure|program|property|raise|record|repeat|sealed|set|sequence|shl|shr|sizeof|then|to|try|type|typeof|until|uses|var|where|while|with|xor|abstract|default|external|forward|internal|on|overload|override|params|private|protected|public|read|reintroduce|unit|virtual|write)\>"
+color cyan "\<(true|false|nil|int64|uint64|integer|longint|longword|cardinal|BigInteger|smallint|word|shortint|byte|boolean|real|double|char|string|object)\>"
+color lightgreen "\<[+-]?([[:digit:]]+.)?[[:digit:]]+\>"
+color lightred "'.*'"
+color bold,black "[<>=:;.]"
