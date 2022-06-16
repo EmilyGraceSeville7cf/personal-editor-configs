@@ -1,0 +1,31 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Awk",
+		"Clickable URLs",
+		"JQ Syntax",
+		"LSP",
+		"LSP-bash",
+		"LSP-dockerfile",
+		"LSP-json",
+		"LSP-lemminx",
+		"LSP-pyright",
+		"LSP-yaml",
+		"Package Control",
+		"Pretty JSON",
+		"Pretty Shell",
+		"Pretty YAML",
+		"SublimeLinter",
+		"SublimeLinter-contrib-markdownlint",
+		"SublimeLinter-contrib-yamllint",
+		"SublimeLinter-flake8",
+		"SublimeLinter-json",
+		"Tabnine",
+		"Terminus",
+		"Visual Studio Code Plus Scheme",
+	],
+}
