@@ -1,0 +1,14 @@
+{
+    "shell_cmd": "pabcnetcclear.exe \"$file_path/$file_base_name.pas\" && mono \"$file_path/$file_base_name.exe\"",
+    "selector": "source.pascal",
+    "variants": [
+        {
+            "name": "Build",
+            "shell_cmd": "pabcnetcclear.exe \"$file\""
+        },
+        {
+            "name": "Run",
+            "shell_cmd": "mono \"$file_path/$file_base_name.exe\""
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+	"font_size": 21,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"color_scheme": "Light+.sublime-color-scheme",
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"file_tab_style": "square",
+	"auto_complete": true,
+	"caret_style": "solid",
+	"block_caret": true,
+	"indent_guide_options": [
+		"draw_normal",
+		"draw_active_single",
+		"solid"
+	],
+}
