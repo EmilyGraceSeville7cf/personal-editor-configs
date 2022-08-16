@@ -1,12 +1,12 @@
-:set number relativenumber
+set number relativenumber
 set background=light
 
 call plug#begin()
-:Plug 'davidhalter/jedi-vim'
-:Plug 'nvie/vim-flake8'
-:Plug 'itspriddle/vim-shellcheck'
-:Plug 'alx741/vinfo'
-:Plug 'morhetz/gruvbox'
+Plug 'davidhalter/jedi-vim'
+Plug 'nvie/vim-flake8'
+Plug 'itspriddle/vim-shellcheck'
+Plug 'alx741/vinfo'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 if (empty($TMUX))
@@ -22,5 +22,5 @@ if (empty($TMUX))
   endif
 endif
 
-:colorscheme gruvbox
+colorscheme gruvbox
 
