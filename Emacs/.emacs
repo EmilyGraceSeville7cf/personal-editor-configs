@@ -18,7 +18,7 @@
 (dolist (package emacs-packages)
   (package-install package))
 
-(setq emacs-language-servers '(bash-ls csharp-ls json-ls yamlls))
+(setq emacs-language-servers '(bash-ls csharp-ls json-ls yamlls xmlls))
 (dolist (server emacs-language-servers)
   (lsp-ensure-server server))
 
@@ -32,11 +32,19 @@
 (add-hook 'prog-mode-hook #'flycheck-mode)
 (add-hook 'prog-mode-hook #'company-mode)
 (add-hook 'prog-mode-hook #'format-all-mode)
-(defvar emacs-hooks '(shell-mode-hook python-mode-hook java-mode-hook csharp-mode-hook c++-mode-hook yaml-mode-hook json-mode-hook))
+(defvar emacs-hooks '(shell-mode-hook
+					  python-mode-hook
+					  java-mode-hook
+					  csharp-mode-hook
+					  c++-mode-hook
+					  yaml-mode-hook
+					  json-mode-hook
+					  xml-mode-hook)) ; Doesn't work without explicit `lsp` start
 (dolist (hook emacs-hooks)
   (add-hook hook #'lsp))
 
-(defvar format-all-formatters '(("JSON" prettier)
+(defvar format-all-formatters '(("YAML" tidy)
+								("JSON" prettier)
 								("YAML" prettier)
 								("Shell" shfmt)
 								("Python" black)
