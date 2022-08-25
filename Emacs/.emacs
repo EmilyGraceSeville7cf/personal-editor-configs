@@ -10,7 +10,7 @@
 
 (defvar emacs-themes '(spacemacs-theme) "Themes installed as packages.")
 (defvar emacs-linters '(flycheck json-mode yaml-mode markdown-mode) "Code linters installed as packages.")
-(defvar emacs-language-servers '(lsp-mode lsp-pyright lsp-java) "Language servers installed as packages.")
+(defvar emacs-language-servers '(lsp-mode cmake-mode lsp-pyright lsp-java) "Language servers installed as packages.")
 (defvar emacs-formatters '(format-all) "Code formatters installed as packages.")
 (defvar emacs-other '(company) "Other packages installed as packages.")
 
@@ -32,25 +32,27 @@
 (add-hook 'prog-mode-hook #'flycheck-mode)
 (add-hook 'prog-mode-hook #'company-mode)
 (add-hook 'prog-mode-hook #'format-all-mode)
-(defvar emacs-hooks '(shell-mode-hook
+(defvar emacs-hooks '(cmake-mode-hook
+					  xml-mode-hook
+					  json-mode-hook
+					  yaml-mode-hook
+					  shell-mode-hook
 					  python-mode-hook
 					  java-mode-hook
 					  csharp-mode-hook
-					  c++-mode-hook
-					  yaml-mode-hook
-					  json-mode-hook
-					  xml-mode-hook)) ; Doesn't work without explicit `lsp` start
+					  c++-mode-hook))
 (dolist (hook emacs-hooks)
   (add-hook hook #'lsp))
 
-(defvar format-all-formatters '(("YAML" tidy)
+(defvar format-all-formatters '(("XML" tidy)
 								("JSON" prettier)
 								("YAML" prettier)
 								("Shell" shfmt)
 								("Python" black)
 								("Java" clang-format)
 								("C#" clang-format)
-								("C++" clang-format)))
+								("C++" clang-format)
+								("Cmake" cmake-format)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
