@@ -18,7 +18,7 @@
 (dolist (package emacs-packages)
   (package-install package))
 
-(setq emacs-language-servers '(bash-ls csharp-ls))
+(setq emacs-language-servers '(bash-ls csharp-ls json-ls yamlls))
 (dolist (server emacs-language-servers)
   (lsp-ensure-server server))
 
@@ -32,7 +32,7 @@
 (add-hook 'prog-mode-hook #'flycheck-mode)
 (add-hook 'prog-mode-hook #'company-mode)
 (add-hook 'prog-mode-hook #'format-all-mode)
-(defvar emacs-hooks '(shell-mode-hook python-mode-hook java-mode-hook csharp-mode-hook c++-mode-hook))
+(defvar emacs-hooks '(shell-mode-hook python-mode-hook java-mode-hook csharp-mode-hook c++-mode-hook yaml-mode-hook json-mode-hook))
 (dolist (hook emacs-hooks)
   (add-hook hook #'lsp))
 
